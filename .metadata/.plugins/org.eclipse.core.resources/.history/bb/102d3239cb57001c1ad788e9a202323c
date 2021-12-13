@@ -1,0 +1,67 @@
+package forLoop;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		int n;
+		for (n=0; n<2; n++) {
+			System.out.println("for loop" + n);
+		}
+		
+		for (int i=0; i<10; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		
+		for (int i=0; i<20; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		
+		for (int i=10; i<0; i--) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		
+		for (int i=0; i<10; i=i+2) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+
+		int sum = 0;
+		for (int i=0; i<=100; i++) {
+			sum += i;
+		}
+		System.out.println("sum : " + sum);
+		
+		// 학생 5명의 국어 성적의 합계와 평균
+		// 90, 85, 95, 100, 85, 75
+		int numArr[] = new int[6];
+		numArr[0] = 90;
+		numArr[1] = 85;
+		numArr[2] = 95;
+		numArr[3] = 100;
+		numArr[4] = 85;
+		numArr[5] = 75;
+		
+		sum = 0;
+		for (int i = 0; i< numArr.length; i++) {
+			sum += numArr[i];
+		}
+		System.out.println("sum : " + sum);
+		
+		double avg = (double)sum / numArr.length;
+		System.out.println("avg : " + avg);
+		
+		int number = 0;
+		String names[] = { "홍길동", "일지매", "성춘향", "홍두깨" };
+		for (int i=0; i< names.length; i++) {
+			number++;
+			if (names[i].equals("성춘향")) {
+				System.out.println("찾았습니다.");
+				System.out.println("번호는 " + number + "번 입니다.");
+			}
+		}
+	}
+
+}

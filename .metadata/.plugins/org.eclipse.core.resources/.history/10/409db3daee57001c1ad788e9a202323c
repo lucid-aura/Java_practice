@@ -1,0 +1,16 @@
+package assign4;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		/*
+		 * 	사용자가 원하는 학생수로 점수를 입력받는다.
+		 * 	총점, 평균 그리고 최고 점수를 구한다.
+		 * 	입력 받은 점수 중에서 90점 이상인 학생의 수는 몇명인가?
+		 * 	그리고 그 점수들만을 새로운 배열에 저장하도록 한다.
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+	}
+
+}

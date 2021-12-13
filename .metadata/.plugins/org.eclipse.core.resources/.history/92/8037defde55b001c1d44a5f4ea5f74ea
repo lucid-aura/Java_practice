@@ -1,0 +1,13 @@
+package assign8;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// String data 3개 저장
+		
+		// String data 3개 불러오기 -> 배열 저장
+		
+		String human = {"홍길동", "24", "서울시" };
+
+	}
+}

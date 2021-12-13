@@ -1,0 +1,17 @@
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Menu >>>");
+		System.out.println("1. 10진수 -> 2진수로 변경");
+		System.out.println("2. 10진수 -> 8진수로 변경");
+		System.out.println("3. 10진수 -> 16진수로 변경");
+		System.out.println("4. 2진수 -> 10진수로 변경");
+		System.out.println("5. 8진수 -> 10진수로 변경");
+		System.out.println("1. 16진수 -> 10진수로 변경");
+
+	}
+
+}

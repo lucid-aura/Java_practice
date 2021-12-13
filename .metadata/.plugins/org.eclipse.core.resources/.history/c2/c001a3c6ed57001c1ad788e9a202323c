@@ -1,0 +1,30 @@
+package continues;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// continue 아래 코드들은 생략
+		for (int i = 0; i< 10; i++) {
+			
+			System.out.println("i = " + i);
+			System.out.println("for start");
+			if (i > 3) {
+				continue;
+			}
+			System.out.println("for end");}
+		
+		int w = 0;
+		while(w < 10) {
+			System.out.println("w = " + w);
+			System.out.println("while start");
+			
+			if (w > 3) {
+				continue;
+			}
+			System.out.println("while end");
+			
+			w++;
+		}
+	}
+
+}

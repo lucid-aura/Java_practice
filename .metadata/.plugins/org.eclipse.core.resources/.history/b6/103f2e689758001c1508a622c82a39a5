@@ -1,0 +1,42 @@
+package day4;
+
+public class StringTest {
+
+	public static void main(String[] args) {
+		/*
+		 * String : Wrapper class
+		 * 				char[]
+		 * 				문자열을 편집, 정보 취득 등등
+		 */
+		
+		String str;
+		//	String	: class 명칭
+		// str			: class 변수 == object (객체)
+		
+		str = "안녕하세요";
+		System.out.println(str);
+		
+		String str1 = new String("안녕하세요");
+		String str2 = "반갑습니다";
+		
+		// 문자열의 결합
+		String str3 = str1 + str2;
+		System.out.println(str3);
+		
+		str3 = str3 + "건강하세요";
+		System.out.println(str3);
+		
+		// equals : 문자열을 비교
+		String str4 = "world";
+		String str5 = "worl";
+		str5 = str5 + "d";
+		
+		if (str4 == str5) {
+			System.out.println("같은 문자열입니다.");
+		}
+		
+		boolean b = str4.equals(str5);
+		
+	}
+
+}

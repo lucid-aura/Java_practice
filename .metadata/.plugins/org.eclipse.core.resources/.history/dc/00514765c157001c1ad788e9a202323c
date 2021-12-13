@@ -1,0 +1,17 @@
+package forLoop;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		int n;
+		for (n=0; n<2; n++) {
+			System.out.println("for loop" + n);
+		}
+		
+		for (int i=0; i<10; i++) {
+			System.out.println("for loop" + i);
+		}
+		
+	}
+
+}

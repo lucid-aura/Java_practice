@@ -1,0 +1,49 @@
+package assign3;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		/* 계산기 */
+		
+		// 1. 입력
+		// 첫번째 숫자
+		System.out.print("첫번째 숫자 : ");
+		double first_number = scan.nextDouble();
+		
+		// 연산자
+		System.out.print("연산자 : ");
+		String operator;
+		do {
+			operator = scan.next();
+		}while(operator != "+" && operator != "-" && operator != "*" && operator != "/");
+
+		// 두번째 숫자
+		System.out.print("두번째 숫자 : ");
+		double second_number = scan.nextDouble();
+			
+		// 2. 연산
+		double answer = 0;
+		switch (operator) {
+		case "+":
+			answer = first_number + second_number;
+			break;
+		case "-":
+			answer = first_number - second_number;
+			break;
+		case "*":
+			answer = first_number * second_number;
+			break;
+		case "/":
+			answer = first_number / second_number;
+			break;
+		}
+		
+		// 3. 결과 출력
+		System.out.println(first_number + operator + second_number + " = " + answer);
+	}
+
+}

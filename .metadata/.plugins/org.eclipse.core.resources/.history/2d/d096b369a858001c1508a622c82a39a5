@@ -1,0 +1,16 @@
+package assign5;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// 변수에 입력된 문자가 숫자로만 되어있는지 아니면 다른 문자인지
+		Scanner sc = new Scanner(System.in);
+		char c = sc.next().charAt(0);
+		System.out.println(c - '0');
+		
+		// 변수에 입력된 문자열이 숫자로만 되어있는지 아니면 다른 문자인지
+	}
+
+}

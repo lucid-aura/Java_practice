@@ -1,0 +1,14 @@
+package day4;
+
+public class Wrapper {
+
+	public static void main(String[] args) {
+		/*
+		 * Wrapper Class
+		 *	일반 자료형(char, int, double)을 사용하기 편리하도록 구현해 놓은 것.
+		 *	문자열 -> '가' '나' '다' 를 합쳐서 "가나다"
+		 *	
+		 */
+	}
+
+}

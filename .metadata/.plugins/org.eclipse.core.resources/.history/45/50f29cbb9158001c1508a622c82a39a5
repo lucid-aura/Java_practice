@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Menu >>>");
+		System.out.println("1. 10진수 -> 2진수로 변경");
+		System.out.println("2. 10진수 -> 8진수로 변경");
+		System.out.println("3. 10진수 -> 16진수로 변경");
+		System.out.println("4. 2진수 -> 10진수로 변경");
+		System.out.println("5. 8진수 -> 10진수로 변경");
+		System.out.println("6. 16진수 -> 10진수로 변경");
+		System.out.print("원하시는 처리 번호를 입력해 주세요 >> ");
+		
+		int work = sc.nextInt();
+		
+		System.out.print("변경하고 싶은 숫자를 입력해 주십시오 >> ");
+		String numStr = sc.next();
+		
+		switch(work) {
+			case 1:
+				int num10 = Integer.parseInt(numStr);
+				String num2 = Integer.toBinaryString(num10);
+				
+				System.out.println("10진수" + numStr + " 의 2진수는" + num2 + "입니다.");
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+		}
+
+	}
+
+}
