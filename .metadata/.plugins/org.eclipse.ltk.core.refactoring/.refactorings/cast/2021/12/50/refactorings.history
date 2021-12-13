@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;MainClass.java&apos; to &apos;Basic/src/cast&apos;&#x0D;&#x0A;- Original project: &apos;cast&apos;&#x0D;&#x0A;- Destination element: &apos;Basic/src/cast&apos;&#x0D;&#x0A;- Original element: &apos;cast.MainClass.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Basic/src&lt;cast" element1="/src&lt;cast{MainClass.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1638857033978" units="1" version="1.0"/>
-</session>
