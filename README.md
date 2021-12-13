@@ -1,4 +1,5 @@
 # Java_practice
+- 모든 자바 파일은 src 디렉터리 안에 포함되어 있습니다.
 Secure Coding Java Practice
 # Basic
 - 수업 시간에 배운 내용들을 정리해놓은 프로젝트 파일입니다.
