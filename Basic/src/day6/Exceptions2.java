@@ -4,14 +4,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class Exceptions2 {
+public class Exceptions2 { // Exceptions2 클래스 선언
 
 	public static void main(String[] args) {
 		// NullPointerException : 동적 할당이 안된 경우
-		String str = null;
+		String str = null; // 주소가 연결 안된(값이 할당 안된) 문자열 (문자의 배열) 선언
 		try {
-			System.out.println(str.length());
-		}catch (NullPointerException e) {
+			System.out.println(str.length()); // 길이 출력
+		}catch (NullPointerException e) { // 비정상적인 주소 접근 예외 발견시
 			// e.printStackTrace();
 			System.out.println("str은 할당되지 않았습니다.");
 		}

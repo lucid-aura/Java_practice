@@ -17,7 +17,7 @@ public class MainClass {
 		// String "안녕하세요" "반갑습니다" "" 3개 저장
 		// String data 3개 불러오기 -> 배열저장 -> 출력
 		String name[] = { "홍길동", "성춘향", "일지매" };
-		
+
 		File file = new File("c:\\myfile\\names.txt");		
 		
 		try {
@@ -112,7 +112,6 @@ public class MainClass {
 		
 		
 		// --------------------------
-		
 		
 
 	}
