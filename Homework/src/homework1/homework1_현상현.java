@@ -3,7 +3,7 @@ package homework1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MainClass {
+public class homework1_현상현 {
 
 	public static void main(String[] args) {
 		/*
