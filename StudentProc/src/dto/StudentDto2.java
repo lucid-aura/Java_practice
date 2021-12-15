@@ -1,21 +1,18 @@
 package dto;
 
-public class StudentDto {
+public class StudentDto2 {
 
-	// 데이터의 접근, 관리
-	// CRUD
-	
 	private int number;
 	private String name;
 	private double height;
 	private int eng;
 	private int math;
 	
-	public StudentDto() {
+	public StudentDto2() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public StudentDto(int number, String name, double height, int eng, int math) {
+	public StudentDto2(int number, String name, double height, int eng, int math) {
 		super();
 		this.number = number;
 		this.name = name;
@@ -63,12 +60,6 @@ public class StudentDto {
 	public void setMath(int math) {
 		this.math = math;
 	}
-
-	@Override
-	public String toString() {
-		return "StudentDto [number=" + number + ", name=" + name + ", height=" + height + ", eng=" + eng + ", math="
-				+ math + "]";
-	}
 	
 	public void remove() {
 		number = 0;
@@ -77,4 +68,18 @@ public class StudentDto {
 		math = 0;
 		eng = 0;
 	}
+
+	@Override
+	public String toString() {
+		return "StudentDto [number=" + number + ", name=" + name + ", height=" + height + ", eng=" + eng + ", math="
+				+ math + "]";
+	}
+	
+	
 }
+
+
+
+
+
+
