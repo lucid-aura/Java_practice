@@ -9,7 +9,7 @@ public class MainClass {
 		Scanner sc = new Scanner(System.in);
 		
 		StudentDao dao = new StudentDao();
-		dao.fileRead();
+//		dao.fileRead();
 		
 		// menu
 		while(true) {
@@ -18,8 +18,8 @@ public class MainClass {
 			System.out.println("3. 학생 정보 검색");
 			System.out.println("4. 학생 정보 수정");
 			System.out.println("5. 학생 정보 모두 출력");
-			System.out.println("6. 파일로 저장");
-			System.out.println("7. 종료");
+//			System.out.println("6. 파일로 저장");
+			System.out.println("6. 종료");
 			
 			int menuNum = sc.nextInt();
 			switch (menuNum) {
@@ -38,10 +38,10 @@ public class MainClass {
 			case 5:
 				dao.alldata();
 				break;
+//			case 6:
+//				dao.fileWrite();
+//				break;
 			case 6:
-				dao.fileWrite();
-				break;
-			case 7:
 				System.exit(0);
 				break;
 			default:
