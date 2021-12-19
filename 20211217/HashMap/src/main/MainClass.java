@@ -69,8 +69,9 @@ public class MainClass {
 		System.out.println(value);
 		
 		// iterator : 반복자(주소) -> 포인터
+
 		Iterator<Integer> it = hMap.keySet().iterator();
-		while(it.hasNext()) {
+		while( it.hasNext() ) {
 			Integer k = it.next();
 			System.out.println(k);
 			
@@ -101,7 +102,7 @@ public class MainClass {
 		hMap.replace(111, "백 + 십 + 일");
 		System.out.println(hMap.get(111));
 		
-		hMap.put(111,  "100 + 10 + 1"); // 넣을때 에러가 나오는게 아니라 값이 수정된다. -> 확인 작업이 필요
+		hMap.put(111, "100 + 10 + 1"); // 넣을때 에러가 나오는게 아니라 값이 수정된다. -> 확인 작업이 필요
 		System.out.println(hMap.get(111));
 		
 		// sorting -> key 값으로 진행
@@ -123,7 +124,6 @@ public class MainClass {
 		// TreeMap
 		
 		TreeMap<String, String> tmap = new TreeMap<String, String>( map );
-		
 		// 오름
 //		Iterator<String> it2 = tmap.keySet().iterator();
 		// 내림

@@ -33,16 +33,16 @@ public class MainClass {
 				dao.read();
 				break;
 			case 3:
-				//dao.delete();
+				dao.delete();
 				break;
 			case 4:
-				//dao.update();
+				dao.update();
 				break;
 			case 5:
 				dao.alldata();
 				break;
 			case 6:
-				//dao.fileWrite();
+				dao.fileWrite();
 				break;
 			case 7:
 				System.exit(0);

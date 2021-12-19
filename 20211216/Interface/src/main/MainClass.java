@@ -16,7 +16,6 @@ public class MainClass {
 		myi.method();
 		
 		MyInterface myinter = new MyInterface() {
-			
 			@Override
 			public void method() {
 				// TODO Auto-generated method stub

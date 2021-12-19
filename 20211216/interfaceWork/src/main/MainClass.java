@@ -38,7 +38,7 @@ public class MainClass {
 		
 		for (int i = 0; i < arr.length; i++) {
 			action(arr[i]);
-		}		
+		}
 	}
 
 	public static void action(Robot robot) {

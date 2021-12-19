@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -37,9 +38,11 @@ public class MainClass {
 		arrList.add(new Integer(333));
 		
 		int len = arrList.size();
+		
 		System.out.println("list의 크기:" + len);
 		
 		System.out.println( arrList.get(0) );
+
 		
 		for (int i = 0; i < arrList.size(); i++) {
 			System.out.println( arrList.get(i) );
@@ -51,6 +54,7 @@ public class MainClass {
 		
 		// 원하는 위치에 추가
 		arrList.add(1, 200);
+//		arrList.add(200);
 		
 		for (int i = 0; i < arrList.size(); i++) {
 			System.out.println( arrList.get(i) );
@@ -65,13 +69,15 @@ public class MainClass {
 		System.out.println("list의 크기:" + arrList.size());
 		
 		// 검색
-		int index = arrList.indexOf(  333 );
+		int index = arrList.indexOf( 333 );
+		
 		System.out.println(index);
 				
 		index = -1;
 		for (int i = 0; i < arrList.size(); i++) {
 			Integer val = arrList.get(i);
-			if (val == 200) {
+			input()
+			if (student.get() == input ) {
 				index = i;
 				break;
 			}
