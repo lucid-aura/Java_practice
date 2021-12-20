@@ -74,10 +74,9 @@ public class MainClass {
 		System.out.println(index);
 				
 		index = -1;
+		int input = 333;
 		for (int i = 0; i < arrList.size(); i++) {
-			Integer val = arrList.get(i);
-			input()
-			if (student.get() == input ) {
+			if (arrList.get(i) == input ) {
 				index = i;
 				break;
 			}
