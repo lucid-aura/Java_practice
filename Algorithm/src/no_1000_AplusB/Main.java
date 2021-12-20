@@ -1,4 +1,4 @@
-package no_1000;
+package no_1000_AplusB;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;

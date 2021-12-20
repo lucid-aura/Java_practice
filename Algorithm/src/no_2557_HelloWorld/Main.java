@@ -1,4 +1,4 @@
-package no_2557;
+package no_2557_HelloWorld;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
