@@ -3,6 +3,8 @@ package mul.camp.a.controller;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,52 +19,85 @@ import mul.camp.a.service.MemberService;
 
 @Controller
 public class MemberController {
+
 	private static Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
 	@Autowired
 	MemberService service;
 	
-	@RequestMapping(value = "login.do",  method = RequestMethod.GET)
-	public String hello(Model model) {
-		logger.info("HelloController login() " + new Date());
-		
-		
+	@RequestMapping(value = "login.do", method = RequestMethod.GET)
+	public String login() {
+		logger.info("MemberController login() " + new Date());		
 		return "login";
+	//	return "loginCSS";
 	}
 	
-	@RequestMapping(value = "register.do",  method = RequestMethod.GET)
-	public String register(Model model) {
-		logger.info("HelloController register() " + new Date());
-		
-		
-		return "register";
+	@RequestMapping(value = "regi.do", method = RequestMethod.GET)
+	public String regi() {
+		logger.info("MemberController regi() " + new Date());
+		return "regi";
+	//	return "regiCSS";
 	}
 	
-	@RequestMapping(value = "valid.do",  method = RequestMethod.POST)
-	public String valid(Model model, MemberDto dto) {
-		logger.info("HelloController valid() " + new Date());
-		int result = service.signup(dto);
-		System.out.println(result);
-		model.addAttribute("result", result);	
+	@RequestMapping(value = "regiAf.do", method = RequestMethod.POST)
+	public String regiAf(MemberDto dto) {
+		logger.info("MemberController regiAf() " + new Date());
 		
-		return "register";
+		boolean b = service.addmember(dto);
+		if(b == true) {
+			System.out.println("가입되었음");
+		}
+		
+	//	return "login"; // login.jsp
+	//	return "login.do"; // login.do.jsp
+		
+		return "redirect:/login.do";
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "valid_id.do",  method = RequestMethod.POST, produces = "application/String; charset=utf-8")
-	public String valid(Model model, String id) {
-		logger.info("HelloController valid_check() " + new Date());
-		MemberDto dto = new MemberDto();
-		dto.setId(id);
+	@RequestMapping(value = "idcheck.do", method = RequestMethod.POST)
+	public String idcheck(String id) {
+		logger.info("MemberController idcheck() " + new Date());		
+		System.out.println("id:" + id);
 		
-		String result = service.checkID(dto);
-		if (result.equals("0")) {
-			result = "가능한 아이디입니다.";
-		}
-		else {
-			result = "중복된 아이디입니다.";
-		}
-		return result;
+		int count = service.getId(id);
+		System.out.println("count:" + count);		
+		if(count > 0) {	// 아이디가 있음
+			return "NO";
+		}else {			// 아이디가 없음
+			return "YES";
+		}		
 	}
-
+	
+	@RequestMapping(value = "loginAf.do", method = RequestMethod.POST)
+	public String loginAf(MemberDto dto, HttpServletRequest req) { // request == HttpServletRequest
+		logger.info("MemberController loginAf() " + new Date());		
+		
+		MemberDto mem = service.login(dto);
+		if(mem != null) {	// 정상적인 로그인
+			
+			// login 정보를 저장 -> session 
+			req.getSession().setAttribute("login", mem);			
+			
+			return "redirect:/bbslist.do";
+		}
+		else {		// 회원정보에 없음
+			
+			return "redirect:/login.do";
+		}		
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

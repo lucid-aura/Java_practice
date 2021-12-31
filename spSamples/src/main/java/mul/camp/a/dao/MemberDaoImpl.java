@@ -11,17 +11,33 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Autowired
 	SqlSession session;
-	String ns = "Member.";
 	
+	String ns = "Member.";
+
 	@Override
-	public int signup(MemberDto dto) {
-		int result = session.insert(ns + "signup", dto);
-		return result;
+	public int addmember(MemberDto mem) {
+		int count = session.insert(ns + "addmember", mem);
+		return count;
 	}
 
 	@Override
-	public String checkID(MemberDto dto) {
-		String result = Integer.toString(session.selectOne(ns+"checkID", dto));
-		return result;
+	public int getId(String id) {
+		int count = session.selectOne(ns + "getId", id);
+		return count;
 	}
+
+	@Override
+	public MemberDto login(MemberDto mem) {		
+		return session.selectOne(ns + "login", mem);
+	}
+	
+	
+	
 }
+
+
+
+
+
+
+

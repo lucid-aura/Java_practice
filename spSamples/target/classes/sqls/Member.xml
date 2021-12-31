@@ -4,29 +4,24 @@
         
 <mapper namespace="Member">
 
-<!-- 
-<select id="allmember" resultType="mul.camp.a.dto.MemberDto">
-	SELECT ID, PWD, NAME, EMAIL, AUTH
-	FROM MEMBER
-</select>
-
-
-<select id="getmember" parameterType="mul.camp.a.dto.MemberDto" resultType="mul.camp.a.dto.MemberDto">
-	SELECT ID, PWD, NAME, EMAIL
-	FROM MEMBER
-	WHERE ID=#{ id }
-</select>
- -->
- 
- <select id="checkID" parameterType="mul.camp.a.dto.MemberDto" resultType="int">
-	SELECT count(*)
-	FROM MEMBER
-	WHERE ID=#{ id }
-</select>
-
-<insert id="signup" parameterType="mul.camp.a.dto.MemberDto" >
-	INSERT INTO MEMBER(ID, PWD, NAME, EMAIL)
-	VALUES(#{ id}, #{ pwd }, #{ name }, #{ email })
+<insert id="addmember" parameterType="mul.camp.a.dto.MemberDto">
+	INSERT INTO MEMBER(ID, PWD, NAME, EMAIL, AUTH)
+	VALUES(#{id}, #{pwd}, #{name}, #{email}, 3)
 </insert>
 
+<select id="getId" parameterType="String" resultType="Integer">
+	SELECT COUNT(*)
+	FROM MEMBER
+	WHERE ID=#{id}
+</select>
+
+<select id="login" parameterType="mul.camp.a.dto.MemberDto" 
+	resultType="mul.camp.a.dto.MemberDto">
+	SELECT ID, NAME, EMAIL, AUTH
+	FROM MEMBER
+	WHERE ID=#{id} AND PWD=#{pwd}
+</select>
+
 </mapper>
+
+

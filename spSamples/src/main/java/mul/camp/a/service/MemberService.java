@@ -4,7 +4,7 @@ import mul.camp.a.dto.MemberDto;
 
 public interface MemberService {
 
-	int signup(MemberDto dto);
-	String checkID(MemberDto dto);
-
+	boolean addmember(MemberDto mem);	
+	int getId(String id);
+	MemberDto login(MemberDto mem);
 }

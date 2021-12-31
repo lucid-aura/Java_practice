@@ -7,19 +7,27 @@ import mul.camp.a.dao.MemberDao;
 import mul.camp.a.dto.MemberDto;
 
 @Service
-public class MemberServiceImpl implements MemberService {
+public class MemberServiceImpl implements MemberService{
 
 	@Autowired
 	MemberDao dao;
-	
+
 	@Override
-	public int signup(MemberDto dto) {
+	public boolean addmember(MemberDto mem) {
 		
-		return dao.signup(dto);
+		int count = dao.addmember(mem);		
+		return count>0?true:false;
 	}
 
 	@Override
-	public String checkID(MemberDto dto) {
-		return dao.checkID(dto);
+	public int getId(String id) {		
+		return dao.getId(id);
 	}
+
+	@Override
+	public MemberDto login(MemberDto mem) {		
+		return dao.login(mem);
+	}
+	
+	
 }

@@ -4,8 +4,9 @@ import mul.camp.a.dto.MemberDto;
 
 public interface MemberDao {
 
-	int signup(MemberDto dto);
-
-	String checkID(MemberDto dto);
-
+	int addmember(MemberDto mem);
+	
+	int getId(String id);
+	
+	MemberDto login(MemberDto mem);
 }

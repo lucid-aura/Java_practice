@@ -21,14 +21,14 @@
   </build>
   
   <dependencies>
-    
-	 <dependency>
-	   <groupId>org.springframework</groupId>
-	   <artifactId>spring-webmvc</artifactId>
-	   <version>5.3.13</version>
-	 </dependency>
-	 
-	<dependency>
+  	
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>5.3.13</version>
+	</dependency>
+  	
+  	<dependency>
 	    <groupId>log4j</groupId>
 	    <artifactId>log4j</artifactId>
 	    <version>1.2.17</version>
@@ -37,8 +37,10 @@
 	<dependency>
 	    <groupId>org.slf4j</groupId>
 	    <artifactId>slf4j-simple</artifactId>
-	    <version>1.7.32</version>
+	    <version>1.7.32</version>	    
 	</dependency>
+	
+		
 	
 	<dependency>
 		<groupId>javax.servlet</groupId>
@@ -142,13 +144,7 @@
   		<artifactId>slf4j-api</artifactId>
   		<version>1.7.30</version>
   	</dependency>
-
-	<!-- log4j -->
-  	<!-- <dependency>
-  		<groupId>ant</groupId>
-  		<artifactId>ant-apache-log4j</artifactId>
-  		<version>1.9.4</version>
-  	</dependency> -->
+	
   	
   	<dependency>
 	    <groupId>commons-dbcp</groupId>
@@ -252,15 +248,24 @@
   		<artifactId>spring-web</artifactId>
   		<version>5.3.13</version>
   	</dependency>
-
-
-
-
-
-
-
-
-<dependency>
+	
+	
+	
+	<!-- Java용 json 라이브러리(XML/YAM/CSV) data-processing 툴 -->
+  	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>2.10.1</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.10.1</version>
+	</dependency> 
+	
+	
+	<dependency>
 	    <groupId>org.aspectj</groupId>
 	    <artifactId>aspectjweaver</artifactId>
 	    <version>1.9.4</version>
@@ -277,34 +282,27 @@
 	    <groupId>com.oracle.database.jdbc</groupId>
 	    <artifactId>ojdbc6</artifactId>
 	    <version>11.2.0.4</version>
-	</dependency>
-	
+	</dependency>	
 	
 	<dependency>
 	    <groupId>org.json</groupId>
 	    <artifactId>json</artifactId>
 	    <version>20190722</version>
-	</dependency>
-	
-		<!-- Java용 json 라이브러리(XML/YAM/CSV) data-processing 툴 -->
-  	<dependency>
-	    <groupId>com.fasterxml.jackson.core</groupId>
-	    <artifactId>jackson-core</artifactId>
-	    <version>2.10.1</version>
-	</dependency>
-	
-	<dependency>
-	    <groupId>com.fasterxml.jackson.core</groupId>
-	    <artifactId>jackson-databind</artifactId>
-	    <version>2.10.1</version>
-	</dependency>
-	
-	</dependencies>
-	
-	<repositories>
-	  	<repository>
-			<id>codelds</id>		<!-- ojdbc6 와 함께 추가 -->
-			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
-		</repository>
-	</repositories>
+	</dependency>	 
+  
+  </dependencies>  
+
+
+<repositories>
+  	<repository>
+		<id>codelds</id>		<!-- ojdbc6 와 함께 추가 -->
+		<url>https://code.lds.org/nexus/content/groups/main-repo</url>
+	</repository>
+</repositories>
+  
 </project>
+
+
+
+
+
