@@ -1,4 +1,4 @@
-package no_11653_소인수분해;
+package no_8958_OX퀴즈;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,23 +13,22 @@ public class Main {
 		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
 		String str = br.readLine();
 		int N = Integer.parseInt(str);
-		int div = 2;
-		// N     72 36 18 9        3
-		// div  2   2    2  2->3  3
-		// ret  2   2   2  3         3
-		// div 4, 6, 8
-		if (N != 1) {
-			while(div < N) {
-				if (N % div == 0) {
-					N = (int)(N/div);
-					bw.write(div + "\n");
+		int score = 0;
+		int answer = 0;
+		for (int i=0; i<N; i++) {	
+			str = br.readLine();
+			for (int j=0; j<str.length(); j++) {	
+				if (str.charAt(j) == 'O') {
+					score += 1;
 				}
 				else {
-					div = div + 1;
+					score = 0;
 				}
+				answer += score;
 			}
-			bw.write(N + "\n");
-		
+			bw.write(answer + "\n");
+			score = 0;
+			answer = 0;
 		}
 		bw.flush();
 	}
