@@ -7,50 +7,13 @@ import java.util.List;
 public class Solution {
 
 	public static void main(String[] args) {
-		int[] numbers = {2, 1, 3, 4, 1};
-		
-		List<Integer> sum =  new ArrayList<Integer>();
-		
-		for (int i = 0; i<numbers.length-1; i++) {
-			for (int j = i+1; j<numbers.length; j++) {
-				if (!sum.contains(numbers[i]+numbers[j])){ // ! : not의 의미
-					sum.add(numbers[i] + numbers[j]);
-				}
-				//sum.sort(null);
-			}
-			
+		int[] a = {1, 2, 3, 4}; 	
+		int[] b = {-3, -1, 0, 2};
+		int answer = 0;
+		for (int i = 0; i<a.length; i++) {
+			answer += a[i]*b[i];
 		}
-		
-		/*
-		// ?, !!
-		// null
-		Integer a = null;
-		int b = null;
-		*/
-		
-		
-		
-		// 1
-		int[] answer = new int[sum.size()];
-		for (int i = 0; i<sum.size(); i++) {
-			answer[i] = sum.get(i);
-		}
-		
-		// 2
-		answer = sum.stream().mapToInt(i -> i).toArray();
-		// 3
-		answer = sum.stream().mapToInt(Integer::intValue).toArray();
-
-		
-		
-		for (int i : answer) {
-			System.out.print(i + " ");
-		}
-		Arrays.sort(answer);
-		System.out.println();
-		for (int i : answer) {
-			System.out.print(i + " ");
-		}
+		System.out.println(answer);
 		// return answer;
 	}
 }
