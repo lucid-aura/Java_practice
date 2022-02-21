@@ -22,7 +22,7 @@ public class Solution {
 			int[] noAnswer = {-1};
 			// return noAnswer;
 		}
-		Collections.sort(a);
+		Collections.sort(arrayList);
 		answer = arrayList.stream().mapToInt(Integer::intValue).toArray();
 		Arrays.sort(answer);
 		// return answer;

@@ -20,6 +20,7 @@ public class Main {
 			sum += numbers.get(i);
 		}
 		
+		boolean sw = false;
 		int exceptIndex1 = -1;
 		int exceptIndex2 = -1;
 		for (int i = 0; i<8; i++) {
@@ -28,10 +29,15 @@ public class Main {
 				if (sum - numbers.get(i) - numbers.get(j) == 100) {
 					exceptIndex1 = i;
 					exceptIndex2 = j;
+					sw = true;
 					break;
 				}
 			}
+			if (sw) {
+				break;
+			}
 		}
+		
 		for (int i = 0; i < 9; i++) {
 			if (i != exceptIndex1 && i != exceptIndex2) {
 				bw.write(numbers.get(i) + "\n");
