@@ -23,7 +23,7 @@ public class Main {
 			for (int j = 0; j<rings[i].length(); j++) {
 				String cmp = "";
 				for(int k = 0; k<letter.length(); k++) {
-					cmp += rings[i].charAt((j+k)	(rings[i].length()));
+					cmp += rings[i].charAt((j+k)%(rings[i].length()));
 				}
 				if (letter.equals(cmp)) {
 					answer++;

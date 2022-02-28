@@ -1,4 +1,4 @@
-package no_23301_스터디시간정하기2;
+package no_1476_날짜계산;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,13 +11,23 @@ public class Main {
     	BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter (new OutputStreamWriter(System.out));
 		
-		String[] NT = br.readLine().split(" ");
-		int N = Integer.parseInt(NT[0]);
-		int T = Integer.parseInt(NT[1]);
+		String[] ESM = br.readLine().split(" ");
+		int E = Integer.parseInt(ESM[0]);
+		if(E == 15) {E = 0;} 
+		int S = Integer.parseInt(ESM[1]);
+		if (S == 28) {S = 0;}
+		int M = Integer.parseInt(ESM[2]);
+		if (M == 19) {M = 0;}
 		
-		
-			//bw.write(token + " " + count + "\n");
-			//bw.flush();
+		int year = S;
+		while(true) {
+			if (year%15 == E && year%19 == M && year > 0) {
+				bw.write(year + "");
+				bw.flush();
+				break;
+			}
+			year += 28;
+		}
 
     }
 }
