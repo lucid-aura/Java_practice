@@ -16,7 +16,7 @@ public class Main {
 		int N = Integer.parseInt(br.readLine());
 
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-		
+		// [ [1,2,3], [1,3,2] ... [3,2,1] ]
 		for (int i = 1; i<=N; i++) { // 1, 2, 3
 			ArrayList<Integer> sub = new ArrayList<Integer>(); 
 			sub.add(i); // N = 3 [1], [2], [3] sub = [1], [2], [3]
@@ -59,9 +59,9 @@ public class Main {
     // 참조형 변수
     
     public static ArrayList<ArrayList<Integer>> DFS(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> sub, int N) {
-    	if (/*1층 : [3] 2층 : [3, 2] 3층 : [3, 2, 1]*/sub.size() == N) { // 예외처리 (탈출 조건) 한 배열의 개수가 N개일 때
+    	if (/*1층 : [3] 2층 : [3, 2] 3층 : [3, 2, 1]*/sub.size() == N) { // 정답을 넣는 부분, 루프의 예외처리 (탈출 조건) 한 배열의 개수가 N개일 때
     		result.add(sub); // 3층 에서의 result : [ [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1] ]
-    		return result; 
+    		return result;
     	}
     	// [3]
     	for (int i = 1; i<=N; i++) { // 1~N까지 숫자를 넣어주기 위해 for문 i = 3
@@ -74,8 +74,10 @@ public class Main {
     			
     			new_sub.add(i); // 추가할 숫자를 새로운 배열에 추가한다. new sub = 1층 : [3, 2] 2층 : [3, 2, 1]
 
-    			/* 윗층에서의 result로 갱신한다.*/ 
+    			/* 윗층에서의 result로 갱신한다.*/ // (1층) [1], [2], [3] -> (2층) [1,2], [1,3], [2,1], [2,3], [3,1], [3,2] -> (3층) [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]
+    			
     			result = DFS(result, new_sub, N); // 결과(1, 2층)를 갱신해준다. DFS([ [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1] ], [], 3)
+    			// 순열, 조합
     		}
     	}
 		return result;
