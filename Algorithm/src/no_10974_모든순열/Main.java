@@ -7,7 +7,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+ * 1. main에서 호출 된 후 현재 함수 호출의 스택 상태, 재귀 정도(몇 계단까지 들어갔는지) - 강력 권장
+ * 2. 50번째 줄을 실행할 때 result, sub, new_sub의 값이 들어가 있는 상태를 반드시 확인해보세요!
+ * 3. 메모장을 이용하셔도 좋고 직접 필기구로 적으면서 하셔도 좋습니다. (표 형식도 좋고 원하는 방식대로 해주세요)
+ */
 public class Main {
     public static void main(String args[]) throws IOException {
     	BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
@@ -15,17 +19,9 @@ public class Main {
 		
 		int N = Integer.parseInt(br.readLine());
 
-		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-		// [ [1,2,3], [1,3,2] ... [3,2,1] ]
-		for (int i = 1; i<=N; i++) { // 1, 2, 3
-			ArrayList<Integer> sub = new ArrayList<Integer>(); 
-			sub.add(i); // N = 3 [1], [2], [3] sub = [1], [2], [3]
-			DFS(result, sub, N); 
-			// 첫번째 for문 result [ [1,2,3], [1,3,2] ] 
-			// 두번째 for문 result [ [1,2,3], [1,3,2], [2,1,3], [2,3,1] ]
-			// 세번째 for문 result [ [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1] ]
-		}
-
+		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();		
+		ArrayList<Integer> sub = new ArrayList<Integer>(); // 빈배열 []
+		DFS(result, sub, N);
 		for (int i = 0; i<result.size(); i++) {
 			for (Integer num : result.get(i)) {
 				bw.write(num + " ");
@@ -35,51 +31,26 @@ public class Main {
 		}
     }
     
-    // ArrayList<ArrayList<Integer>>
-    /*
     public static void DFS(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> sub, int N) {
-    	if (sub.size() == N) { // 예외처리 (탈출 조건) 한 배열의 개수가 N개일 때
-    		result.add(sub); // 최종 결과 2차원 배열에 완성시킨 1차원 배열을 담는다.
+    	if (sub.size() == N-1) { // 예외처리 (탈출 조건) 한 배열의 개수가 N개일 때 [1, 2] [1,3], [2,3]...
+    		for (int i = 1; i<=N; i++) { //  [1, 2] [1,3], [2,3]...
+    			if (!sub.contains(i)) {
+    				ArrayList<Integer> new_arr = new ArrayList<Integer>();
+    				new_arr.add(i); // [1,2,3], [1,3,2] 213, 231
+    				result.add(sub); // 최종 결과 2차원 배열에 완성시킨 1차원 배열을 담는다.
+    	    		break;
+    			}
+    		}
     		return; // 결과 2차원 배열 반환
     	}
     	for (int i = 1; i<=N; i++) { // 1~N까지 숫자를 넣어주기 위해 for문
     		if (!sub.contains(i)) { // 포함이 안된 숫자이면 넣어줘야 한다.(포함되면 제외 - 백트래킹)
-    			ArrayList<Integer> new_sub = new ArrayList<Integer>(); // 새로운 배열을 선언(deep vs shallow copy...)
-    			for (Integer num : sub) { // 새로운 배열에 값을 복사하여 똑같이 저장한다.
-					new_sub.add(num);
-				}
-    			new_sub.add(i); // 추가할 숫자를 새로운 배열에 추가한다.
-    			DFS(result, new_sub, N); //
+    			ArrayList<Integer> new_sub = (ArrayList<Integer>) sub.clone();
+    			new_sub.add(i); // 추가할 숫자를 새로운 배열에 추가한다. [1] -> [1, 2], [1,3] , [2] 2 1 ,2 3
+    			/* 여기 부분에서의 상태를 적어주세요 */
+    			DFS(result, new_sub, N); // [1] -> [2]
     		}
     	}
 		return;
-    }
-    */
-    
-    // 참조형 변수
-    
-    public static ArrayList<ArrayList<Integer>> DFS(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> sub, int N) {
-    	if (/*1층 : [3] 2층 : [3, 2] 3층 : [3, 2, 1]*/sub.size() == N) { // 정답을 넣는 부분, 루프의 예외처리 (탈출 조건) 한 배열의 개수가 N개일 때
-    		result.add(sub); // 3층 에서의 result : [ [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1] ]
-    		return result;
-    	}
-    	// [3]
-    	for (int i = 1; i<=N; i++) { // 1~N까지 숫자를 넣어주기 위해 for문 i = 3
-    		if (!sub.contains(i)) {
-
-    			ArrayList<Integer> new_sub = new ArrayList<Integer>(); // [] 새로운 배열을 선언(deep vs shallow copy...)
-    			for (Integer num : sub) { // 새로운 배열에 값을 복사하여 똑같이 저장한다.
-					new_sub.add(num); // 1층(sub [3] , new sub =[3]) 2층(sub [3, 2]) 
-				} // sub 리스트에 있는 값들을 복사해서 new_sub에 옮겨준다.
-    			
-    			new_sub.add(i); // 추가할 숫자를 새로운 배열에 추가한다. new sub = 1층 : [3, 2] 2층 : [3, 2, 1]
-
-    			/* 윗층에서의 result로 갱신한다.*/ // (1층) [1], [2], [3] -> (2층) [1,2], [1,3], [2,1], [2,3], [3,1], [3,2] -> (3층) [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]
-    			
-    			result = DFS(result, new_sub, N); // 결과(1, 2층)를 갱신해준다. DFS([ [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1] ], [], 3)
-    			// 순열, 조합
-    		}
-    	}
-		return result;
     }
 }
