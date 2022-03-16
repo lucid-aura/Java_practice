@@ -45,16 +45,18 @@ public class Main {
 
 	private static void DFS(ArrayList<ArrayList<Integer>> answer, ArrayList<Integer> number, ArrayList<Integer> now_number) {
 		if (now_number.size() == 6) {
+			answer.add(now_number);
+			/*
 			if (!answer.contains(now_number)) {
-				answer.add(now_number);
-			}
+				
+			}*/
 			return;
 		}
 		
 		int idx = 0;
 		if (now_number.size() > 0) {
 			idx = number.indexOf(Collections.max(now_number));
-		}
+		} 
 		
 		for (int i = idx; i<number.size(); i++) {
 			if (!now_number.contains(number.get(i))) {
@@ -64,5 +66,5 @@ public class Main {
 			}
 		}
 		return;
-	}
+	}	
 }

@@ -1,0 +1,98 @@
+number
+[1 2 3 4 5 6 7]
+
+1. DFS()
+idx 시작 : 0
+now_number []
+new_now_number [1]
+
+2. DFS()
+idx 시작 : 0
+i : 0~7 0:x 1:
+now_number [1]
+new_now_number [1, 2]
+
+3. DFS()
+idx 시작 : 1
+i : 0~7 1:x
+now_number [1, 2]
+new_now_number [1, 2, 3]
+
+4. DFS()
+idx 시작 : 2
+i : 0~7 2:x
+now_number [1, 2, 3]
+new_now_number [1, 2, 3, 4]
+
+5. DFS()
+idx 시작 : 3
+i : 0~7 for (3:x
+now_number [1, 2, 3, 4]
+new_now_number [1, 2, 3, 4, 5]
+
+6. DFS()
+idx 시작 : 4
+i : 0~7 for (4:x, 5:o
+now_number [1, 2, 3, 4, 5]
+new_now_number [1, 2, 3, 4, 5, 6]
+
+7. DFS() 최초로 answer 배열에 값이 추가가 됨
+now_number [1, 2, 3, 4, 5, 6]
+answer =[ [1, 2, 3, 4, 5, 6] ]
+
+6. DFS()
+i: 0~7 for (6:
+now_number [1, 2, 3, 4, 5]
+new_now_number [1, 2, 3, 4, 5, 7]
+
+7'  DFS()
+now_number [1, 2, 3, 4, 5, 7]
+answer =[ [1, 2, 3, 4, 5, 6],   [1, 2, 3, 4, 5, 7]]
+
+6. DFS()
+now_number [1, 2, 3, 4, 5]
+i: 0~7 
+
+
+5. DFS()
+idx 시작 : 3
+i : 3~7 for (3:x, i:4->5
+now_number [1, 2, 3, 4]
+new_now_number [1, 2, 3, 4, 6]
+
+6` DFS()
+idx 시작 : 5
+i 5~6(<=) for( 값6:x, 값7:o 
+now_number [1,2,3,4,6]
+new_now_number [1, 2, 3, 4, 6, 7]
+
+7`` DFS(answer, number,  [1, 2, 3, 4, 6, 7] = now_number)
+now_number  [1, 2, 3, 4, 6, 7]
+answer =[ [1, 2, 3, 4, 5, 6],   [1, 2, 3, 4, 5, 7],  [1, 2, 3, 4, 6, 7]]
+return
+
+6`. DFS()
+now_number [1,2,3,4,6]
+
+5. DFS()
+i : 3~7 for (3:x, i:4->5 ->6
+now_number [1, 2, 3, 4]
+new_now_number [1, 2, 3, 4, 7]
+
+6`` DFS()
+now_number [1, 2, 3, 4, 7]
+i 6~6(<=)
+
+5. DFS()
+i : 3~7 for (3:x, i:4->5 ->6->7
+now_number [1, 2, 3, 4]
+new_now_number [1, 2, 3, 4, 7]
+
+4. DFS()
+idx 시작 : 2
+i : 0~7 인덱스 2:x , 3-> 4(값:5)
+now_number [1, 2, 3]
+new_now_number [1, 2, 3, 5]
+
+5. DFS()
+
